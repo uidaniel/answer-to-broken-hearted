@@ -48,16 +48,12 @@ export default function HomePage() {
           <div className="hero-top">
             <div className="hero-intro">
               <h1 className="enter" style={{ "--d": 1 } as React.CSSProperties}>Are you depressed, cheated, hurt, in conflict, or confused? There is an answer to your question.</h1>
-              <p className="enter" style={{ "--d": 2 } as React.CSSProperties}>
-                We walk with individuals, families, communities, nations, business owners and people of faith through
-                heartbreak, conflict and confusion, towards peace.
-              </p>
-              <div className="btn-group enter" style={{ "--d": 3 } as React.CSSProperties}>
+              <div className="btn-group enter" style={{ "--d": 2 } as React.CSSProperties}>
                 <Link className="btn btn-primary" href="/book">Book a session</Link>
                 <a className="btn btn-light" href="#help">See how we help</a>
               </div>
             </div>
-            <aside className="hero-note enter" style={{ "--d": 4 } as React.CSSProperties}>
+            <aside className="hero-note enter" style={{ "--d": 3 } as React.CSSProperties}>
               <strong>You are not alone.</strong>
               Whatever you are carrying (sorrow, disappointment, a broken relationship or a troubled faith), there is a
               way through it.
