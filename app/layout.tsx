@@ -6,11 +6,13 @@ import Footer from "@/components/Footer";
 import CheckoutProvider from "@/components/checkout/CheckoutProvider";
 import CheckoutDrawer from "@/components/checkout/CheckoutDrawer";
 import RevealObserver from "@/components/RevealObserver";
+import { site } from "@/lib/site";
 import ScrollEffects from "@/components/ScrollEffects";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "900"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: "Answer To The Broken Hearted | There is an answer to your question",
     template: "%s | Answer To The Broken Hearted",
@@ -18,6 +20,8 @@ export const metadata: Metadata = {
   description:
     "Answer To The Broken Hearted helps individuals, families, communities, nations, business owners and people of faith through heartbreak, conflict and confusion.",
   openGraph: {
+    url: "/",
+    siteName: "Answer To The Broken Hearted",
     title: "Answer To The Broken Hearted",
     description: "Heartbreak, conflict, a confused mind about faith. There is an answer to your question.",
   },

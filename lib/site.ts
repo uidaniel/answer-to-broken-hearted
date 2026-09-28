@@ -5,7 +5,8 @@
 export const site = {
   name: "Answer To The Broken Hearted",
   tagline: "There is an answer to your question.",
-  contactEmail: "hello@answertobrokenhearted.com",
+  url: "https://answertothebrokenhearted.com.ng",
+  contactEmail: "hello@answertothebrokenhearted.com.ng",
   contactPhone: "+234 000 000 0000",
 
   // eBook prices. Currency your Paystack account accepts: "NGN", "GHS", "ZAR", "KES" or "USD".
