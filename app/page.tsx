@@ -13,8 +13,6 @@ import {
 import IssueTabs from "@/components/IssueTabs";
 import Photo from "@/components/Photo";
 import SplitWords from "@/components/SplitWords";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/lib/products";
 
 const marqueeWords = [
   { text: "Broken heart" },
@@ -40,8 +38,6 @@ const gallery = [
 ];
 
 export default function HomePage() {
-  const featured = (products.some((p) => p.featured) ? products.filter((p) => p.featured) : products).slice(0, 3);
-
   return (
     <ViewTransition enter="page-enter" exit="page-exit" default="none">
       <div>
@@ -203,24 +199,6 @@ export default function HomePage() {
             <div className="step reveal" style={{ "--i": 0 } as React.CSSProperties}><h4>Book a session</h4><p>Pick a time that suits you on our calendar. It takes less than a minute.</p></div>
             <div className="step reveal" style={{ "--i": 1 } as React.CSSProperties}><h4>Talk it through</h4><p>Meet with us privately. Share what is on your heart and be heard without judgement.</p></div>
             <div className="step reveal" style={{ "--i": 2 } as React.CSSProperties}><h4>Walk forward</h4><p>Leave with clear answers and practical next steps, plus resources to keep growing.</p></div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Featured products ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <div>
-              <span className="tagline">Resources</span>
-              <h2><SplitWords text="eBooks for the journey." /></h2>
-            </div>
-            <Link className="btn btn-outline" href="/shop">View all eBooks</Link>
-          </div>
-          <div className="product-grid">
-            {featured.map((p, i) => (
-              <ProductCard key={p.id} product={p} index={i} />
-            ))}
           </div>
         </div>
       </section>
