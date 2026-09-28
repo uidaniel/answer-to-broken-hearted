@@ -16,7 +16,6 @@ export default function Footer() {
             <ul>
               <li><Link href="/#mission">Our mission</Link></li>
               <li><Link href="/#help">How we help</Link></li>
-              <li><Link href="/shop">Products</Link></li>
               <li><Link href="/book">Book a session</Link></li>
             </ul>
           </div>

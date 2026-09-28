@@ -206,7 +206,6 @@ export default function HomePage() {
           <p className="reveal" style={{ "--i": 1 } as React.CSSProperties}>Take the first step today. Book a private session and let&apos;s find your answer together.</p>
           <div className="btn-group is-center reveal" style={{ "--i": 2 } as React.CSSProperties}>
             <Link className="btn btn-primary" href="/book">Book a session</Link>
-            <Link className="btn btn-light" href="/shop">Browse products</Link>
           </div>
         </div>
       </section>

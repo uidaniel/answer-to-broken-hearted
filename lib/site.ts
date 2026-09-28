@@ -9,10 +9,6 @@ export const site = {
   contactEmail: "hello@answertothebrokenhearted.com.ng",
   contactPhone: "+234 000 000 0000",
 
-  // eBook prices. Currency your Paystack account accepts: "NGN", "GHS", "ZAR", "KES" or "USD".
-  currency: "NGN",
-  currencySymbol: "₦",
-
   paystackPublicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ?? "",
 
   // Paid sessions: price per hour and the lengths people can book.
@@ -39,10 +35,6 @@ export const sessionTopics: Record<SessionKey, string> = {
   conflict: "Conflict resolution",
   faith: "Faith conversation",
 };
-
-export function formatPrice(amount: number) {
-  return site.currencySymbol + amount.toLocaleString("en-US", { maximumFractionDigits: 2 });
-}
 
 export function formatSessionPrice(amount: number) {
   return site.sessions.currencySymbol + amount.toLocaleString("en-US", { maximumFractionDigits: 2 });

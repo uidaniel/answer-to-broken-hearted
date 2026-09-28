@@ -3,8 +3,6 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CheckoutProvider from "@/components/checkout/CheckoutProvider";
-import CheckoutDrawer from "@/components/checkout/CheckoutDrawer";
 import RevealObserver from "@/components/RevealObserver";
 import { site } from "@/lib/site";
 import ScrollEffects from "@/components/ScrollEffects";
@@ -32,12 +30,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={geist.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
-        <CheckoutProvider>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-          <CheckoutDrawer />
-        </CheckoutProvider>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
         <RevealObserver />
         <ScrollEffects />
       </body>

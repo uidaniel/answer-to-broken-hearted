@@ -1,8 +1,6 @@
 import "server-only";
-import { getProduct, type Product } from "./products";
 import { sessionPrice, site } from "./site";
 
-export type VerifiedPurchase = { product: Product; email: string; reference: string };
 export type VerifiedSession = { hours: number; email: string; reference: string };
 
 /** Fetches a transaction from Paystack with the SECRET key; returns it only if it succeeded. */
@@ -19,21 +17,6 @@ async function fetchSuccessfulTransaction(reference: string) {
   const tx = json?.data;
   if (!res.ok || json?.status !== true || tx?.status !== "success") return null;
   return tx;
-}
-
-/**
- * Is `reference` a successful payment for one of our eBooks, at that eBook's full price,
- * in our currency? Returns the purchase if so, otherwise null.
- */
-export async function verifyPurchase(reference: string): Promise<VerifiedPurchase | null> {
-  const tx = await fetchSuccessfulTransaction(reference);
-  if (!tx || tx.metadata?.kind === "session") return null;
-
-  const product = getProduct(String(tx.metadata?.product_id ?? ""));
-  if (!product) return null;
-  if (tx.currency !== site.currency || Number(tx.amount) !== Math.round(product.price * 100)) return null;
-
-  return { product, email: String(tx.customer?.email ?? ""), reference };
 }
 
 /**

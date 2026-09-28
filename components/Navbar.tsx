@@ -9,7 +9,6 @@ import Logo from "./Logo";
 const links = [
   { href: "/#mission", label: "Our mission" },
   { href: "/#help", label: "How we help" },
-  { href: "/shop", label: "Products" },
   { href: "/book", label: "Book a session" },
 ];
 
