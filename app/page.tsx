@@ -70,6 +70,10 @@ export default function HomePage() {
           <p className="hero-title" aria-hidden="true"><span>Answer.</span></p>
         </div>
       </section>
+      <aside className="hero-note-mobile">
+        <strong>You are not alone.</strong>
+        Whatever you are carrying, there is a way through it.
+      </aside>
 
       {/* ===== Mission ===== */}
       <section className="section" id="mission">

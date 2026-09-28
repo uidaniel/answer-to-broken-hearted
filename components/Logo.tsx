@@ -11,10 +11,10 @@ export function LogoMark() {
 
 export default function Logo() {
   return (
-    <Link className="logo" href="/" aria-label="Answer to Broken Hearted home">
+    <Link className="logo" href="/" aria-label="Answer To The Broken Hearted home">
       <LogoMark />
       <span>
-        Answer to
+        Answer To The
         <br />
         Broken Hearted
       </span>

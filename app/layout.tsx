@@ -12,13 +12,13 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "900"], 
 
 export const metadata: Metadata = {
   title: {
-    default: "Answer to Broken Hearted | There is an answer to your question",
-    template: "%s | Answer to Broken Hearted",
+    default: "Answer To The Broken Hearted | There is an answer to your question",
+    template: "%s | Answer To The Broken Hearted",
   },
   description:
-    "Answer to Broken Hearted helps individuals, families, communities, nations, business owners and people of faith through heartbreak, conflict and confusion.",
+    "Answer To The Broken Hearted helps individuals, families, communities, nations, business owners and people of faith through heartbreak, conflict and confusion.",
   openGraph: {
-    title: "Answer to Broken Hearted",
+    title: "Answer To The Broken Hearted",
     description: "Heartbreak, conflict, a confused mind about faith. There is an answer to your question.",
   },
 };

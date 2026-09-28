@@ -3,7 +3,7 @@
  * (see .env.example); everything else can be edited here directly.
  */
 export const site = {
-  name: "Answer to Broken Hearted",
+  name: "Answer To The Broken Hearted",
   tagline: "There is an answer to your question.",
   contactEmail: "hello@answertobrokenhearted.com",
   contactPhone: "+234 000 000 0000",

@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Do you offer money or financial support?",
-    a: "No. Answer to Broken Hearted is not a financial empowerment organisation. We focus only on heartbreak, conflict and faith.",
+    a: "No. Answer To The Broken Hearted is not a financial empowerment organisation. We focus only on heartbreak, conflict and faith.",
   },
   { q: "How do I reschedule or cancel?", a: "Use the link in your confirmation email to reschedule or cancel at any time." },
   {

@@ -10,7 +10,7 @@ export function ProductArt({ product }: { product: Product }) {
     <span className="cover" aria-hidden="true">
       <span className="cover-type">{product.type}</span>
       <span className="cover-title">{product.name}</span>
-      <span className="cover-brand">Answer to Broken Hearted</span>
+      <span className="cover-brand">Answer To The Broken Hearted</span>
     </span>
   );
 }

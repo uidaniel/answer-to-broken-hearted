@@ -1,6 +1,6 @@
-# Answer to Broken Hearted
+# Answer To The Broken Hearted
 
-Website for Answer to Broken Hearted, built with Next.js (App Router, TypeScript).
+Website for Answer To The Broken Hearted, built with Next.js (App Router, TypeScript).
 
 - **Home** (`/`): mission, issues we address, who we serve, how it works, featured products
 - **Book a session** (`/book`): paid sessions ($10/hour, 1–3 hours), paid with Paystack, then booked on Calendly
