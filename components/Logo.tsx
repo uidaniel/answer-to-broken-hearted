@@ -16,7 +16,7 @@ export function LogoMark({ light = false, className = "logo-mark" }: { light?: b
   const hand = light ? "#fcfbfa" : "#153a43";
   const handLines = light ? "#153a43" : "#fcfbfa";
   return (
-    <svg className={className} viewBox="0 0 150 120" aria-hidden="true">
+    <svg className={className} viewBox="0 0 164 120" aria-hidden="true">
       <path fill="#ff7c4d" fillRule="evenodd" d={HEART_WITH_GAP} />
       <path d={SEAMS} fill="none" stroke="#fcfbfa" strokeOpacity=".6" strokeWidth="2.2" strokeLinecap="round" />
       <g transform="translate(84 44) rotate(-24)">

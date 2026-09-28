@@ -96,8 +96,8 @@ p { margin: 0; }
 .navbar.scrolled { box-shadow: 0 1px 0 var(--ink-faint); }
 .navbar-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .logo { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 900; font-size: 1.1rem; letter-spacing: -.02em; line-height: 1.05; }
-.logo-mark { width: 3.75rem; height: 3rem; flex: none; }
-.footer .logo-mark { width: 4.5rem; height: 3.6rem; }
+.logo-mark { width: 4.1rem; height: 3rem; flex: none; }
+.footer .logo-mark { width: 4.9rem; height: 3.6rem; }
 .nav-right { display: flex; align-items: center; gap: .5rem; }
 .nav-menu { display: flex; align-items: center; gap: .25rem; }
 .nav-link { text-decoration: none; font-weight: 600; padding: .5rem 1rem; border-radius: 999px; transition: background-color .2s; }
