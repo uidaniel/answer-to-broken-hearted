@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ import RevealObserver from "@/components/RevealObserver";
 import { site } from "@/lib/site";
 import ScrollEffects from "@/components/ScrollEffects";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "900"], variable: "--font-inter" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" className={geist.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
         <CheckoutProvider>

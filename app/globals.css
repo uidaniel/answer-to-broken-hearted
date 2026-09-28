@@ -33,7 +33,7 @@ body {
   margin: 0;
   background: var(--pearl);
   color: var(--ink);
-  font-family: var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-geist), Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -636,3 +636,19 @@ body.locked { overflow: hidden; }
 .paid-banner strong { display: block; font-size: 1.05rem; }
 .paid-banner span { font-size: .9rem; color: rgba(252, 251, 250, .75); }
 .calendly-wrap:has(> .notice) { min-height: 0; }
+
+/* ---------- Country search dropdown ---------- */
+.combo { position: relative; }
+.combo-input { position: relative; }
+.combo-input input { width: 100%; padding-right: 2.75rem; }
+.combo-input input.has-flag { padding-left: 2.6rem; }
+.combo-flag { position: absolute; left: .9rem; top: 50%; translate: 0 -50%; font-size: 1.2rem; line-height: 1; pointer-events: none; }
+.combo-toggle { position: absolute; right: .35rem; top: 50%; translate: 0 -50%; width: 2.25rem; height: 2.25rem; border: 0; border-radius: 50%; background: none; color: var(--ink-soft); display: inline-flex; align-items: center; justify-content: center; transition: background-color .2s, rotate .25s var(--ease-out); }
+.combo-toggle:hover { background: var(--ink-faint); }
+.combo:has(.combo-list) .combo-toggle { rotate: 180deg; }
+.combo-list { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + .35rem); max-height: 16rem; overflow-y: auto; overscroll-behavior: contain; margin: 0; padding: .35rem; list-style: none; background: var(--white); border: 1px solid var(--ink-faint); border-radius: var(--radius-sm); box-shadow: 0 18px 40px -18px rgba(21, 58, 67, .45); animation: fade-up-sm .2s var(--ease-out); }
+.combo-list li { display: flex; align-items: center; gap: .65rem; padding: .6rem .7rem; border-radius: 6px; cursor: pointer; font-size: .97rem; }
+.combo-list li span { font-size: 1.15rem; line-height: 1; }
+.combo-list li.active { background: var(--ink-faint); }
+.combo-list li.chosen { font-weight: 700; color: var(--orange-deep); }
+.combo-list .combo-empty { cursor: default; color: var(--ink-soft); }

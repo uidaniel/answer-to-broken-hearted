@@ -3,8 +3,9 @@
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { CalendarCheckIcon, CheckCircleIcon, ClockIcon, LockSimpleIcon, VideoCameraIcon } from "@phosphor-icons/react";
-import { countryNames } from "@/lib/countries";
+import { findCountry } from "@/lib/countries";
 import { formatSessionPrice, sessionPrice, sessionTopics, site, type SessionKey } from "@/lib/site";
+import CountrySelect from "./CountrySelect";
 import Photo from "./Photo";
 import SplitWords from "./SplitWords";
 
@@ -60,7 +61,6 @@ export default function BookingSection({ initialSession }: { initialSession?: Se
   const [calendlyReady, setCalendlyReady] = useState(false);
   const bookingRef = useRef<HTMLElement>(null);
   const embedRef = useRef<HTMLDivElement>(null);
-  const [countries, setCountries] = useState<string[]>([]);
 
   const total = sessionPrice(hours);
   const calendlyUrl = booking ? site.calendly[booking.hours] : "";
@@ -79,7 +79,6 @@ export default function BookingSection({ initialSession }: { initialSession?: Se
       /* storage unavailable */
     }
     if (window.Calendly) setCalendlyReady(true);
-    setCountries(countryNames());
   }, []);
 
   useEffect(() => {
@@ -144,7 +143,9 @@ export default function BookingSection({ initialSession }: { initialSession?: Se
     if (!details.name) return setError("Please enter your full name.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details.email)) return setError("Please enter a valid email address.");
     if (details.phone.replace(/\D/g, "").length < 7) return setError("Please enter a phone number we can reach you on.");
-    if (!details.country) return setError("Please tell us which country you are in.");
+    const country = findCountry(details.country);
+    if (!country) return setError("Please choose your country from the list.");
+    details.country = country.name;
     if (!details.notes) return setError("Please tell us briefly what you would like to talk about.");
     if (!site.paystackPublicKey) {
       return setError("Payments are not set up yet. The site owner needs to add NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY.");
@@ -338,12 +339,7 @@ export default function BookingSection({ initialSession }: { initialSession?: Se
                   </div>
                   <div className="field">
                     <label htmlFor="bk-country">Country</label>
-                    <input id="bk-country" name="country" list="bk-countries" autoComplete="country-name" required />
-                    <datalist id="bk-countries">
-                      {countries.map((c) => (
-                        <option key={c} value={c} />
-                      ))}
-                    </datalist>
+                    <CountrySelect id="bk-country" name="country" />
                   </div>
                 </div>
                 <div className="field">
