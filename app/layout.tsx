@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CheckoutProvider from "@/components/checkout/CheckoutProvider";
 import CheckoutDrawer from "@/components/checkout/CheckoutDrawer";
 import RevealObserver from "@/components/RevealObserver";
+import ScrollEffects from "@/components/ScrollEffects";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "900"], variable: "--font-inter" });
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CheckoutDrawer />
         </CheckoutProvider>
         <RevealObserver />
+        <ScrollEffects />
       </body>
     </html>
   );

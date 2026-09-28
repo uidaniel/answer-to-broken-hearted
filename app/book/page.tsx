@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import BookingSection from "@/components/BookingSection";
-import Photo from "@/components/Photo";
+import SplitWords from "@/components/SplitWords";
 import type { SessionKey } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,6 +10,14 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  {
+    q: "How much does a session cost?",
+    a: "$10 per hour. You can book 1, 2 or 3 hours, and you pay securely with Paystack (card, bank transfer or USSD) before choosing your time.",
+  },
+  {
+    q: "What happens after I pay?",
+    a: "Our calendar opens straight away with your details filled in. Pick a day and time, and you will get a confirmation email with your meeting link.",
+  },
   { q: "Is my conversation private?", a: "Yes. What you share in a session stays between you and us." },
   {
     q: "Can two people in a conflict attend together?",
@@ -32,28 +41,17 @@ export default async function BookPage({ searchParams }: { searchParams: Promise
   const initialSession = sessionKeys.find((k) => k === session) ?? null;
 
   return (
-    <>
-      <section className="page-hero">
-        <div className="page-hero-card scene scene-night">
-          <Photo src="/images/lake-sunrise.jpg" priority tint="dark" />
-          <span className="tagline">Book a session</span>
-          <h1>Let&apos;s find your answer, together.</h1>
-          <p>
-            Choose the kind of session you need, then pick a time that works for you. Every conversation is private and
-            free of judgement.
-          </p>
-        </div>
-      </section>
-
+    <ViewTransition enter="page-enter" exit="page-exit" default="none">
+      <div>
       <BookingSection initialSession={initialSession} />
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container container-small">
           <div className="center reveal" style={{ marginBottom: "2.5rem" }}>
             <span className="tagline">Questions</span>
-            <h2 style={{ marginTop: ".75rem" }}>Before you book</h2>
+            <h2 style={{ marginTop: ".75rem" }}><SplitWords text="Before you book" /></h2>
           </div>
-          <div className="faq reveal">
+          <div className="faq reveal" style={{ "--i": 1 } as React.CSSProperties}>
             {faqs.map((f) => (
               <details key={f.q}>
                 <summary>{f.q}</summary>
@@ -63,6 +61,7 @@ export default async function BookPage({ searchParams }: { searchParams: Promise
           </div>
         </div>
       </section>
-    </>
+      </div>
+    </ViewTransition>
   );
 }

@@ -17,9 +17,19 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
+  // Tuck the bar away while scrolling down through content; bring it back on any scroll up.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 8);
+      if (Math.abs(y - lastY) > 6) {
+        setHidden(y > lastY && y > 320);
+        lastY = y;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -28,7 +38,10 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className={`navbar${scrolled ? " scrolled" : ""}`}>
+    <header
+      className={`navbar${scrolled ? " scrolled" : ""}${hidden && !open ? " tucked" : ""}`}
+      style={{ viewTransitionName: "site-header" }}
+    >
       <div className="container navbar-inner">
         <Logo />
         <div className="nav-right">

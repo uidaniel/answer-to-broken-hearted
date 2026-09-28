@@ -8,14 +8,16 @@ type Props = {
   /** When set, the card has "Read more" and "Buy now" buttons (shop page). Otherwise it links to the shop. */
   onView?: () => void;
   onBuy?: () => void;
+  /** Position in its grid, used to stagger the entrance animation. */
+  index?: number;
 };
 
-export default function ProductCard({ product, onView, onBuy }: Props) {
+export default function ProductCard({ product, onView, onBuy, index = 0 }: Props) {
   const interactive = Boolean(onView && onBuy);
   const href = `/shop?product=${product.id}`;
 
   return (
-    <article className="product-card reveal">
+    <article className="product-card reveal" style={{ "--i": index % 3 } as React.CSSProperties}>
       {interactive ? (
         <button type="button" className={`product-media ${sceneClass(product)}`} onClick={onView} aria-label={`View details for ${product.name}`}>
           <ProductArt product={product} />

@@ -64,8 +64,8 @@ export default function ShopCatalog({ initialProductId }: { initialProductId?: s
       </div>
 
       <div className="product-grid">
-        {visible.map((p) => (
-          <ProductCard key={p.id} product={p} onView={() => view(p)} onBuy={() => buy(p)} />
+        {visible.map((p, i) => (
+          <ProductCard key={p.id} product={p} index={i} onView={() => view(p)} onBuy={() => buy(p)} />
         ))}
       </div>
       {visible.length === 0 && <p className="lead">No eBooks here yet. Please check back soon.</p>}
