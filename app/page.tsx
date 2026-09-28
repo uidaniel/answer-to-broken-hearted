@@ -47,7 +47,7 @@ export default function HomePage() {
           <Photo src="/images/hero-friends-sunset.jpg" priority tint="hero" position="center 65%" parallax={0.12} />
           <div className="hero-top">
             <div className="hero-intro">
-              <h1 className="enter" style={{ "--d": 1 } as React.CSSProperties}>Hurting, in conflict, or confused? There is an answer to your question.</h1>
+              <h1 className="enter" style={{ "--d": 1 } as React.CSSProperties}>Are you depressed, cheated, hurt, in conflict, or confused? There is an answer to your question.</h1>
               <p className="enter" style={{ "--d": 2 } as React.CSSProperties}>
                 We walk with individuals, families, communities, nations, business owners and people of faith through
                 heartbreak, conflict and confusion, towards peace.
@@ -104,8 +104,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head reveal">
             <div>
-              <span className="tagline">Issues we address</span>
-              <h2><SplitWords text="Three burdens. One answer." /></h2>
+              <h2><SplitWords text="Issues to Address" /></h2>
             </div>
             <p className="lead" style={{ maxWidth: "26rem" }}>
               Choose what you are going through. Each one is a conversation we are ready to have with you.
@@ -121,7 +120,7 @@ export default function HomePage() {
           <div className="section-head reveal">
             <div>
               <span className="tagline">Who we serve</span>
-              <h2><SplitWords text="Help that reaches every part of life." /></h2>
+              <h2><SplitWords text="Solutions that address every part of life." /></h2>
             </div>
           </div>
           <div className="serve-grid">
